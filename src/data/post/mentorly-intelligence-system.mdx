@@ -16,6 +16,8 @@ metadata:
   canonical: https://chip-portfolio-5tk8va4wn-craraus-projects.vercel.app/mentorly-intelligence-system
 ---
 
+import Mermaid from '../../components/Mermaid.tsx';
+
 Mentorship has always been powerful, but it's traditionally been difficult to measure and optimize. At Mentorly, we've created a system that transforms mentorship from a purely qualitative experience into one backed by actionable intelligence. Here's how we're using AI to extract meaningful insights from mentorship interactions.
 
 ## The Challenge: Turning Conversations into Intelligence
@@ -29,8 +31,8 @@ Organizations running mentorship programs face a common problem: they collect va
 
 ## Our Solution: The Mentorly Intelligence System
 
-```mermaid
-flowchart TD
+<Mermaid 
+  chart={`flowchart TD
     A[User Dashboard] -->|Requests & Displays| B[Visualization Layer]
     B <-->|Data Exchange| C[Intelligence Engine]
     
@@ -55,8 +57,9 @@ flowchart TD
     style F fill:#F48FB1,stroke:#C2185B,stroke-width:2px
     style G fill:#FFD54F,stroke:#FF8F00,stroke-width:2px
     style H fill:#424242,stroke:#212121,stroke-width:2px,color:#FFFFFF
-    style I fill:#424242,stroke:#212121,stroke-width:2px,color:#FFFFFF
-```
+    style I fill:#424242,stroke:#212121,stroke-width:2px,color:#FFFFFF`}
+  client:load
+/>
 
 ### How It Works: From User Request to Intelligent Insight
 
