@@ -15,21 +15,58 @@ const Mermaid: React.FC<MermaidProps> = ({ chart, className = '' }) => {
         startOnLoad: false,
         theme: 'dark',
         themeVariables: {
-          primaryColor: '#64B5F6',
+          // Blue boxes with white text
+          primaryColor: '#1565C0',
           primaryTextColor: '#FFFFFF',
-          primaryBorderColor: '#1565C0',
+          primaryBorderColor: '#0D47A1',
+          
+          // Dark grey boxes with white text  
+          secondaryColor: '#263238',
+          secondaryTextColor: '#FFFFFF',
+          secondaryBorderColor: '#37474F',
+          
+          // Green boxes with white text
+          tertiaryColor: '#2E7D32',
+          tertiaryTextColor: '#FFFFFF',
+          tertiaryBorderColor: '#1B5E20',
+          
+          // Additional colors for contrast
+          background: '#1A1A1A',
+          mainBkg: '#263238',
+          secondBkg: '#1565C0', 
+          tertiaryBkg: '#2E7D32',
+          
+          // Text colors - all white for dark backgrounds
+          nodeTextColor: '#FFFFFF',
+          textColor: '#FFFFFF',
+          labelTextColor: '#FFFFFF',
+          
+          // Lines and borders
           lineColor: '#90A4AE',
-          sectionBkgColor: '#424242',
-          altSectionBkgColor: '#616161',
-          gridColor: '#90A4AE',
-          secondaryColor: '#81C784',
-          tertiaryColor: '#FFD54F',
+          edgeLabelBackground: '#263238',
+          clusterBkg: '#37474F',
+          clusterBorder: '#546E7A',
+          
+          // Ensure subgraph backgrounds are dark with white text
+          cScale0: '#263238',
+          cScale1: '#37474F', 
+          cScale2: '#455A64',
+          
+          // Arrow and connector colors
+          arrowheadColor: '#90A4AE',
+          
+          // Specific node styling
+          fillType0: '#1565C0',
+          fillType1: '#2E7D32',
+          fillType2: '#FFB74D',
+          fillType3: '#E57373',
+          fillType4: '#9575CD',
         },
       });
 
       const renderChart = async () => {
         try {
-          const { svg } = await mermaid.render('mermaid-chart', chart);
+          const { svg } = await mermaid.render('mermaid-chart-' + Date.now(), chart);
           if (mermaidRef.current) {
             mermaidRef.current.innerHTML = svg;
           }
